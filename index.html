@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task-Manager-App</title>
+    <link href="/src/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="w-full py-4 px-3 bg-blue-50">
+      <h2 class="text-2xl font-medium text-blue-400">Task Manager</h2>
+    </header>
+
+    <!-- MAIN -->
+    <main id="main"></main>
+
+    <!-- FOOTER -->
+    <footer class="w-full fixed bottom-0 py-3 px-3">
+      <form id="task-input-form" class="flex flex-row gap-2">
+        <input
+          autocomplete="off"
+          placeholder="Your task..."
+          class="flex-1 bg-gray-200 rounded-xl p-4 text-xl placeholder:text-gray-500 font-medium"
+          id="task-input-element"
+        />
+        <button
+          type="submit"
+          class="bg-blue-800 text-white py-4 px-6 cursor-pointer rounded-xl text-xl font-medium"
+        >
+          Add Task
+        </button>
+      </form>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

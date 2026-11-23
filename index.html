@@ -8,33 +8,40 @@
   </head>
   <body>
     <!-- HEADER -->
-    <header class="w-full py-4 px-3 bg-blue-50">
-      <h2 class="text-2xl font-medium text-blue-400">Task Manager</h2>
+    <header class="w-full bg-blue-50 px-3 py-4 md:px-4 lg:px-6">
+      <h2 class="text-xl font-medium text-blue-400 md:text-2xl">
+        Task Manager
+      </h2>
     </header>
 
     <!-- MAIN -->
-    <main id="main">
+    <main id="main" class="pb-24">
       <article
-        class="min-h-[70vh] mx-4 my-6 flex justify-center items-center rounded-xl"
+        class="mx-4 flex min-h-[70vh] items-center justify-center rounded-xl px-2"
       >
-        <h1 class="text-lg font-normal text-gray-400">
+        <h1 class="text-center text-base font-normal text-gray-400 md:text-lg">
           Add a task to display.
         </h1>
       </article>
     </main>
 
     <!-- FOOTER -->
-    <footer class="w-full fixed bottom-0 py-3 px-3">
-      <form id="task-input-form" class="flex flex-row gap-2">
+    <footer
+      class="fixed inset-x-0 bottom-0 w-full bg-white px-3 pt-3 pb-8 md:px-4 lg:px-6"
+    >
+      <form
+        id="task-input-form"
+        class="mx-auto flex max-w-3xl gap-2 lg:max-w-4xl"
+      >
         <input
           autocomplete="off"
           placeholder="Your task..."
-          class="flex-1 bg-gray-200 rounded-xl p-4 text-xl placeholder:text-gray-500 font-medium"
+          class="min-w-0 flex-1 rounded-xl bg-gray-200 px-3 py-3 text-base font-medium placeholder:text-gray-500 md:px-4 md:text-lg lg:py-4"
           id="task-input-element"
         />
         <button
           type="submit"
-          class="bg-blue-800 text-white py-4 px-6 cursor-pointer rounded-xl text-xl font-medium"
+          class="shrink-0 cursor-pointer rounded-xl bg-blue-800 px-3 py-3 text-sm font-medium text-white md:px-4 md:text-base lg:px-6 lg:py-4 lg:text-lg"
         >
           Add Task
         </button>

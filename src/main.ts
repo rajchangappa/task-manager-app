@@ -18,7 +18,7 @@ const savedTasks = localStorage.getItem("all-tasks-data");
 export const TASKS_DATA: Task[] = savedTasks ? JSON.parse(savedTasks) : [];
 
 // Save To Local Storage
-function saveTaskState() {
+export function saveTaskState() {
   localStorage.setItem("all-tasks-data", JSON.stringify(TASKS_DATA));
 }
 

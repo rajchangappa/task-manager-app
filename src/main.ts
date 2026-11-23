@@ -8,17 +8,25 @@ export interface Task {
   createdAt: string;
 }
 
-export const TASKS_DATA: Task[] = [];
-
 const addTaskForm = document.querySelector<HTMLFormElement>("#task-input-form");
 const formInputElement = document.querySelector<HTMLInputElement>(
   "#task-input-element",
 );
 
+// Load Saved data
+const savedTasks = localStorage.getItem("all-tasks-data");
+export const TASKS_DATA: Task[] = savedTasks ? JSON.parse(savedTasks) : [];
+
+// Save To Local Storage
+function saveTaskState() {
+  localStorage.setItem("all-tasks-data", JSON.stringify(TASKS_DATA));
+}
+
 if (!addTaskForm || !formInputElement) {
   throw new Error("Task form elements are missing.");
 }
 
+// Add New Task
 addTaskForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const userInput = formInputElement.value.trim();
@@ -35,8 +43,10 @@ addTaskForm.addEventListener("submit", (e) => {
   };
 
   TASKS_DATA.push(newTask);
-  console.log("New task added!", newTask);
+  saveTaskState();
 
   addTaskForm.reset();
   displayTasks(TASKS_DATA);
 });
+
+displayTasks(TASKS_DATA);
